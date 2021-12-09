@@ -16,14 +16,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 2em;
-
-}
-
-a {
     font-family: 'Bebas Neue', cursive;
     padding-left: 30px;
+    padding-top: 0.35em;
     text-decoration: none;
-    color: white;
-    font-size: 2em;
+    color: rgb(66, 53, 42);
+    font-size: 1.5em;
 }
+

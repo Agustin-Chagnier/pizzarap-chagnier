@@ -1,5 +1,5 @@
 import "./navbar.css";
-
+import CartWidget from './CartWidget';
 
 const Navbar = () => {
     return ( 
@@ -7,10 +7,11 @@ const Navbar = () => {
     <div className="titulos">
     <h1 className="titulo">PizzaRap</h1>
     </div>
+        <CartWidget />
     <div className="links">
-        <a href="#">COMBOS</a>
-        <a href="#">ESPECIALES</a>
-        <a href="#">INFO</a>
+        <a class="links" href="#">COMBOS</a>
+        <a class="links" href="#">ESPECIALES</a>
+        <a class="links" href="#">INFO</a>
     </div>
     </nav>
 
