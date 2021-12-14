@@ -9,7 +9,7 @@ function App() {
     return ( 
     <>
         <Navbar />
-        <ItemListContainer nombre={prompt("Introduzca su nombre")} />
+        <ItemListContainer nombre={"USUARIO"} />
     </>
     );
 }
