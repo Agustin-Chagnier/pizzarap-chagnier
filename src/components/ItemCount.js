@@ -13,18 +13,17 @@ function ItemCount({stock, initial, onAdd}) {
     
     const sumar = () => {
         setContador(contador + 1)
-        if (contador >= stock) {
-            contador(stock)
-        }
+        
     }
 
     const restar = () => {
         setContador(contador - 1)
-        if (contador <= initial) {
-            setContador(initial)
-        }
+        
     }
 
+    const agregarItem = () => {
+        onAdd(contador)
+    }
 
 
     
@@ -37,11 +36,11 @@ function ItemCount({stock, initial, onAdd}) {
         <p>{contador}</p>
         <span class="material-icons" onClick={restar}>remove</span>
         
-        <button onClick={onAdd}>AGREGAR</button>
+        <button onClick={agregarItem}>AGREGAR</button>
         </div>
         </div>
         </>
     )
 }
 
-export default ItemCount
+export default ItemCount 

@@ -1,22 +1,68 @@
+import { useState , useEffect } from "react";
 import React from "react";
 import "./ItemListContainer.css";
-import ItemCount from './ItemCount.js';
+import ItemList from './ItemList';
+
+
+
+
 
 
 const ItemListContainer = (prop) => {
-   
-    function onAdd(a) {
-        
-        console.log("agregaste " + a + " unidades al carrito")
-    }
+    
+    
+    
+    const productos = [
+       {
+           "id": 1,
+       "producto":"Muzzarella"
+       },
+       {
+           "id": 2,
+           "producto":"Napolitana"
+       },
+       {
+           "id": 3,
+           "producto":"Fugazzeta"
+       }
+    ]
+    
 
-    return (
+
+    let [lista, setLista] = useState([])
+
+    useEffect (()=>{
+
+        const promesa = new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res(productos)
+            },3000)
+        })
+
+        promesa
+        .then((productos)=>{
+            console.log(productos)
+            console.log("RESPUESTA THEN")
+            setLista(productos)
+        })
+        
+    },[])
+
+
+
+        return (
+
+    
+        
+            
         <>  
         <p id="greeting">Hola {prop.nombre}! </p>
-        <ItemCount stock="5" initial="1" onAdd={onAdd} />
+        <ItemList productos={lista}/>
         
         </>
     )
 }
+
+
 
 export default ItemListContainer
