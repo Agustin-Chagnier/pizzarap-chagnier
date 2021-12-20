@@ -1,0 +1,8 @@
+#item__box {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid black 2px;
+
+}

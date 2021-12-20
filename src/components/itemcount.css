@@ -1,8 +1,8 @@
-#fichaProducto {
+#fichaContador {
     width: 11em;
     display: flex;
     flex-direction: column;
-    border: black solid 2px;
+   
 }
 
 #contadorProducto {

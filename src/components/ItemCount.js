@@ -29,8 +29,7 @@ function ItemCount({stock, initial, onAdd}) {
     
     return (
         <>
-        <div id="fichaProducto">
-        <h2>PRODUCTO</h2>
+        <div id="fichaContador">       
         <div id="contadorProducto">
         <span class="material-icons" onClick={sumar}>add</span>
         <p>{contador}</p>
