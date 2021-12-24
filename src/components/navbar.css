@@ -2,25 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@700&display=swap'); 
 
 #navbar {
+    width: auto;
     background-color: orange;
     display: flex;
     flex-direction: row;
+}
+
+#logo {
+    width: 5em;
+    margin: 1em;
+}
     
-}
-.titulo {
-    font-family: 'Oswald', sans-serif; 
-    padding: 0.5em;
-}
+    
 
 .links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-family: 'Bebas Neue', cursive;
-    padding-left: 30px;
-    padding-top: 0.35em;
-    text-decoration: none;
-    color: rgb(66, 53, 42);
-    font-size: 1.5em;
+    margin: 2em;
+    font-size: 1.8em;
+
 }
 
+#carrito {
+    padding-top: 1.7em;
+    size: 10em;
+}

@@ -1,43 +1,44 @@
 import { useState , useEffect } from "react";
 import React from "react";
 import ItemDetail from "./ItemDetail"
+import { useParams } from "react-router-dom";
 
 
+const ItemDetailContainer = ({productos}) => {
 
-const ItemDetailContainer = (prop) => {
+    let {id} = useParams()
+    let [seleccion, setSeleccion] = useState({}); 
 
-    let [producto, setProducto] = useState(null)
+    console.log(productos)
 
     const getItem = () =>{
 
         const promesa = new Promise((res,rej)=>{
             setTimeout(()=>{
-                res(prop)
-            },3000)
-        })
+                res.json(productos.find((prod) => prod.id === id));
+            },3000);
+        });
 
         promesa
-        .then((prop)=>{
-            console.log(prop)
-            console.log("RESPUESTA THEN")
-            setProducto(prop)
+        .then((prod)=>{
+            setSeleccion(prod)
         })
 
     }
         
-   
-
-
+    useEffect(() => getItem(),[id])
 
 
 
     return (
         <div>
-            <button onClick={getItem}>AGREGAR AL DETALLE</button>
-            <ItemDetail producto={producto}/>
+            <ItemDetail producto={seleccion}/>
         </div>
-
     )
 }
 
 export default ItemDetailContainer
+
+
+
+

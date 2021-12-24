@@ -2,67 +2,45 @@ import { useState , useEffect } from "react";
 import React from "react";
 import "./ItemListContainer.css";
 import ItemList from './ItemList';
+import { useParams } from "react-router-dom"
 
 
 
 
 
 
-const ItemListContainer = (prop) => {
+const ItemListContainer = ({productos, nombre}) => {
     
     
-    
-    const productos = [
-       {
-           "id": 1,
-           "producto":"Muzzarella",
-           "img":"/muzzarella.png",
-           "precio": 400
-       },
-       {
-           "id": 2,
-           "producto":"Napolitana",
-           "img":"/napolitana.jpg",
-           "precio": 450
-       },
-       {
-           "id": 3,
-           "producto":"Fugazzeta",
-           "img":"/fugazzeta.jpeg",
-           "precio": 500
-       }
-    ]
-    
-
-
     let [lista, setLista] = useState([])
+    
+    /* let {categoria} = useParams()  */
+    console.log(productos)
+    
 
-    useEffect (()=>{
+        useEffect (()=>{
 
         const promesa = new Promise((res,rej)=>{
             setTimeout(()=>{
                 res(productos)
-            },3000)
-        })
-
-        promesa
-        .then((productos)=>{
-            console.log(productos)
-            console.log("RESPUESTA THEN")
-            setLista(productos)
-        })
-        
-    },[])
+              }, 2000);
+            });
+            promesa.then((prods) => {
+              setLista(prods);
+            });
+          }, []);
 
 
 
-        return (
+    
+    
+    return (
 
     
         
             
         <>  
-        <p id="greeting">Hola {prop.nombre}! </p>
+        <p id="greeting">Hola {nombre}! </p>
         <ItemList productos={lista}/>
         
         </>

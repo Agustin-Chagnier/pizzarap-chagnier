@@ -4,21 +4,17 @@ import Item from './Item';
 
 
 
-const ItemList = props => {
+const ItemList = ({productos}) => {
 
 
-
+console.log(productos)
 
     return (
         <>
          
-        {   props.productos.map((producto) =>(
-            <Item
-            id={producto.id}
-            producto={producto.producto}
-            img={producto.img}  
-            />
-            ))
+        {   productos.map((producto) =>{
+            return <Item id={producto.id} producto={producto.producto} img={producto.img} precio={producto.precio}/>
+        })
         }
 
         </>

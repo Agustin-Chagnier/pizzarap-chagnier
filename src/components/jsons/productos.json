@@ -1,19 +1,23 @@
 [
     {
         "id": 1,
-    "producto":"Muzzarella"
+        "producto":"Muzzarella",
+        "img":"/muzzarella.png",
+        "precio": 400
     },
     {
         "id": 2,
-        "producto":"Napolitana"
+        "producto":"Napolitana",
+        "img":"/napolitana.jpg",
+        "precio": 450
     },
     {
         "id": 3,
-        "producto":"Fugazzeta"
+        "producto":"Fugazzeta",
+        "img":"/fugazzeta.jpeg",
+        "precio": 500
     }
-]
-    
-
+ ]
 
 
 
