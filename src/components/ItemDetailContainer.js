@@ -15,7 +15,7 @@ const ItemDetailContainer = ({productos}) => {
 
         const promesa = new Promise((res,rej)=>{
             setTimeout(()=>{
-                res.json(productos.find((prod) => prod.id === id));
+                res(productos.find((prod) => prod.id === id));
             },3000);
         });
 
