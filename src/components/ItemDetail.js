@@ -4,8 +4,8 @@ import ItemCount from "./ItemCount"
 
 const ItemDetail = (producto) => {
 
-
-    
+    console.log(producto.producto)
+    let seleccion = producto.producto[0]
     const onAdd = (cantidad) => {
         
         console.log("cantidad de unidades " + cantidad)
@@ -15,8 +15,8 @@ const ItemDetail = (producto) => {
     return (
         <div>
             <h1>Detalle</h1>
-            <p>{producto.nombre}</p>
-            <p>${producto.precio}</p>
+            <p>{seleccion.nombre}</p>
+            <p>${seleccion.precio}</p>
             <ItemCount stock={5} initial={1} onAdd={onAdd} />
         </div>
     )

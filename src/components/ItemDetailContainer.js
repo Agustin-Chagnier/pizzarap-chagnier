@@ -2,20 +2,23 @@ import { useState , useEffect } from "react";
 import React from "react";
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom";
+import productos from "./jsons/productos.json"
 
 
-const ItemDetailContainer = ({productos}) => {
+const ItemDetailContainer = () => {
 
     let {id} = useParams()
     let [seleccion, setSeleccion] = useState({}); 
+    
 
-    console.log(productos)
 
     const getItem = () =>{
 
         const promesa = new Promise((res,rej)=>{
+            
             setTimeout(()=>{
-                res(productos.find((prod) => prod.id === id));
+                let producto = productos.filter((prod) => prod.id == id)
+                res(producto);
             },3000);
         });
 
@@ -26,7 +29,7 @@ const ItemDetailContainer = ({productos}) => {
 
     }
         
-    useEffect(() => getItem(),[id])
+    useEffect(() => getItem(),[])
 
 
 
