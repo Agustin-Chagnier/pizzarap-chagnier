@@ -15,7 +15,7 @@ const ItemListContainer = ({productos, nombre}) => {
     let [lista, setLista] = useState([])
     
     /* let {categoria} = useParams()  */
-    console.log(productos)
+
     
 
         useEffect (()=>{
