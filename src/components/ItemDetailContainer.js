@@ -1,54 +1,32 @@
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
-import ItemDetail from "./ItemDetail"
+import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import productos from "./jsons/productos.json";
 
+const ItemDetailContainer = () => {
+  let { id } = useParams();
+  let [seleccion, setSeleccion] = useState({});
 
+  const getItem = () => {
+    const promesa = new Promise((res, rej) => {
+      setTimeout(() => {
+        res(productos.find((prod) => prod.id === Number(id)));
+      }, 3000);
+    });
 
-const ItemDetailContainer = (productos) => {
-    
-    let {id} = useParams()
-    let [producto, setProducto] = useState({}); 
-    
-    
-    
-    const getItem = () =>{
-        
-        const promesa = new Promise((res,rej)=>{
-            
-            setTimeout(()=>{
-                console.log("productos de prop" + productos)
-                let producto = productos.filter((prod) => prod.id == id)
-                console.log(producto)
-                res(producto);
-            },3000);
-        },[]);
+    promesa.then((prod) => {
+      setSeleccion(prod);
+    });
+  };
 
-        promesa
-        .then((producto)=>{
-            setProducto(producto)
-        })
-        
-    };
-            
-    
-    useEffect(() => {
-        console.log("soy efecto de IDC")
-        getItem()},[])
-    
+  useEffect(() => getItem(), [id]);
 
+  return (
+    <div>
+      <ItemDetail producto={seleccion} />
+    </div>
+  );
+};
 
-
-    return (
-        <div>
-            {producto ? <ItemDetail producto={producto}/> :<></>}
-            
-        </div>
-    )
-}
-
-export default ItemDetailContainer
-
-
-
-
+export default ItemDetailContainer;

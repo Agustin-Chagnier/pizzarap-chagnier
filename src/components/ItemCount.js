@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import React from "react";
 import "./itemcount.css";
+import { Link } from "react-router-dom";
 
 
-function ItemCount({stock, initial, onAdd}) {
+
+
+
+function ItemCount({stock, initial, onAdd, setCantidad, setMostrar}) {
     
     
     let [contador, setContador] = useState(initial)
@@ -13,16 +17,28 @@ function ItemCount({stock, initial, onAdd}) {
     
     const sumar = () => {
         setContador(contador + 1)
-        
+        if(contador === stock){
+            setContador(stock)     
+        }
     }
 
     const restar = () => {
         setContador(contador - 1)
-        
+        if(contador === initial){
+            setContador(initial)
+        }
     }
 
-    const agregarItem = () => {
+    const agregarItem = (e) => {
         onAdd(contador)
+        setCantidad(contador)
+        console.log("SE AGREGARON " + contador + " UNIDADES AL CARRITO")
+        e.target.disabled = true
+        setMostrar(true)
+
+        setTimeout(() => {
+            
+          }, 3000);
     }
 
 
@@ -35,7 +51,7 @@ function ItemCount({stock, initial, onAdd}) {
         <p>{contador}</p>
         <span class="material-icons" onClick={restar}>remove</span>
         
-        <button onClick={agregarItem}>AGREGAR</button>
+       <Link to={`/carrito`}><button onClick={agregarItem}>AGREGAR</button></Link>
         </div>
         </div>
         </>
