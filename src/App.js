@@ -1,16 +1,20 @@
 import Navbar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Footer from './components/Footer'
 import Home from "./components/Home" 
 import Carrito from "./components/Carrito"
 import productos from "./components/jsons/productos.json"
+import CustomProvider from "./components/cartContext.js"
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 
 
 
@@ -28,9 +32,10 @@ function App() {
 
 
     return ( 
-  
-    <BrowserRouter>
-        <Navbar links={links}/>
+        
+        <CustomProvider>
+            <BrowserRouter>
+            <Navbar links={links}/>
 
             <Routes>
         
@@ -43,9 +48,13 @@ function App() {
             
             </Routes>
         
-        <Footer/>
+            <Footer/>
         
-    </BrowserRouter>
+            </BrowserRouter>
+        </CustomProvider>
+
+
+    
         
            
 

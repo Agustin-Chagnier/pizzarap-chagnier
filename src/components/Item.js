@@ -1,4 +1,3 @@
-import { useState , useEffect } from "react";
 import React from "react";
 import "./item.css";
 import { Link } from "react-router-dom";
@@ -7,8 +6,7 @@ import { Link } from "react-router-dom";
 
 const Item = (props) => {
 
-  
-    
+ 
     return (
         <>
         <div id="item__box">

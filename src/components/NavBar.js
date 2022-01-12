@@ -1,8 +1,15 @@
 import React from "react";
 import "./navbar.css";
 import {Link,NavLink} from "react-router-dom"
+import { useContexto } from "./cartContext.js"
 
 const Navbar = ({nombre,links}) => {
+
+
+    const { cantidad_total } = useContexto()
+    console.log(cantidad_total)
+
+
     return ( 
     <header id="navbar">
         <div id="brand">
@@ -20,6 +27,7 @@ const Navbar = ({nombre,links}) => {
             <span id="carrito" class="material-icons">
                 shopping_cart
             </span>
+            {cantidad_total}
         </NavLink>
     </header>
         
