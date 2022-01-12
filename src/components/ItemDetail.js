@@ -15,7 +15,7 @@ const ItemDetail = ({producto}) => {
     const onAdd = (cantidad) => {
         
         
-        console.log(producto,cantidad)
+
         agregarAlCarrito(producto,cantidad)
     }
 

@@ -17,7 +17,7 @@ const Carrito = () => {
             {carrito.length > 0 ? (
                 <ul>
                     {carrito.map((producto, indice) => {
-                        return <li key={indice}>{producto.producto} - ${producto.precio} - {producto.cantidad} <button onClick={borrarDelCarrito}>ELIMINAR</button></li>
+                        return <li key={indice}>{producto.producto} - ${producto.precio} - {producto.cantidad} <button onClick={()=>borrarDelCarrito(producto.id,producto.cantidad)}>borrar</button></li>
                     })}
                     <button onClick={limpiarCarrito}>LIMPIAR</button>
                 </ul>

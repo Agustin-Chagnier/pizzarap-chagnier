@@ -32,7 +32,6 @@ function ItemCount({stock, initial, onAdd, setCantidad, setMostrar}) {
     const agregarItem = (e) => {
         onAdd(contador)
         setCantidad(contador)
-        console.log("SE AGREGARON " + contador + " UNIDADES AL CARRITO")
         e.target.disabled = true
         setMostrar(true)
 

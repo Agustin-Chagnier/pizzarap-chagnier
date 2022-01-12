@@ -19,26 +19,24 @@ const CustomProvider = ({children}) => {
     const agregarAlCarrito = (producto,cantidad) => {
         
         const productoDuplicado = isInCarrito(producto.id)
-
         if(productoDuplicado != undefined){           
             productoDuplicado.cantidad++
-            setCantidadTotal(carrito.length)
+            
         }else{            
-
-            const productoCantidad = {...producto, cantidad} 
-            setCarrito([...carrito,productoCantidad]);
-            setCantidadTotal(carrito.length)
+            
+            const productoConCantidad = {...producto, cantidad} 
+            setCarrito([...carrito,productoConCantidad]);
+            setCantidadTotal(cantidad)
         }                
+        setCantidadTotal(cantidad_total + cantidad)
     }
-
-    const borrarDelCarrito = (id,cantidad) => {
-       /*  var carritoCopia = carrito.filter(e=>(e.id)!==id)
-        console.log(carritoCopia)
-        setCarrito(carritoCopia)
-        setCantidadTotal(cantidad_total - cantidad) 
-        carritoCopia.splice(producto)
-        console.log(carrito)*/
+    
+    const borrarDelCarrito = (id, cantidad) => {
         
+        const copia = carrito.filter(p => (p.id) !== id)
+        console.log(copia)
+        setCarrito(copia)
+        setCantidadTotal(cantidad_total - cantidad)
     }
 
     const limpiarCarrito = () => {setCarrito([])}
