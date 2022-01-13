@@ -12,6 +12,8 @@ export const useContexto = () => {
 
 const CustomProvider = ({children}) => {
 
+    const [precio_total, setPrecioTotal] = useState(0)
+
     const [cantidad_total,setCantidadTotal] = useState(0)
    
     const [carrito,setCarrito] = useState([])
@@ -28,15 +30,16 @@ const CustomProvider = ({children}) => {
             setCarrito([...carrito,productoConCantidad]);
             setCantidadTotal(cantidad)
         }                
-        setCantidadTotal(cantidad_total + cantidad)
+        setCantidadTotal(cantidad_total + cantidad)     
+        setPrecioTotal(precio_total + producto.precio * cantidad)
     }
     
-    const borrarDelCarrito = (id, cantidad) => {
+    const borrarDelCarrito = (id, cantidad, precio) => {
         
         const copia = carrito.filter(p => (p.id) !== id)
-        console.log(copia)
         setCarrito(copia)
         setCantidadTotal(cantidad_total - cantidad)
+        setPrecioTotal(precio_total - (precio * cantidad))
     }
 
     const limpiarCarrito = () => {setCarrito([])}
@@ -51,7 +54,8 @@ const CustomProvider = ({children}) => {
         carrito,
         agregarAlCarrito,
         borrarDelCarrito,
-        limpiarCarrito
+        limpiarCarrito,
+        precio_total
 
     }
 

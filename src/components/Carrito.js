@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import {Link,NavLink} from "react-router-dom"
 import { useContexto } from "./cartContext.js"
 
 
@@ -6,7 +6,7 @@ import { useContexto } from "./cartContext.js"
 
 const Carrito = () => {
 
-    const {carrito,borrarDelCarrito,limpiarCarrito} = useContexto()
+    const {carrito,borrarDelCarrito,limpiarCarrito,precio_total} = useContexto()
 
 
 
@@ -17,11 +17,12 @@ const Carrito = () => {
             {carrito.length > 0 ? (
                 <ul>
                     {carrito.map((producto, indice) => {
-                        return <li key={indice}>{producto.producto} - ${producto.precio} - {producto.cantidad} <button onClick={()=>borrarDelCarrito(producto.id,producto.cantidad)}>borrar</button></li>
+                        return <li key={indice}>{producto.producto} - ${producto.precio} - {producto.cantidad} <button onClick={()=>borrarDelCarrito(producto.id,producto.cantidad,producto.precio)}>borrar</button></li>
                     })}
+                    {precio_total}
                     <button onClick={limpiarCarrito}>LIMPIAR</button>
                 </ul>
-            ) : <p>No hay productos en el carrito</p>}
+            ) : <p>No hay productos en el carrito<br/><Link to="/menu">Volver al menu</Link></p>}
         </div>
             
     )

@@ -2,12 +2,15 @@ import React from "react";
 import "./navbar.css";
 import {Link,NavLink} from "react-router-dom"
 import { useContexto } from "./cartContext.js"
+import CartWidget from "./CartWidget.js"
+
+
+
 
 const Navbar = ({nombre,links}) => {
 
 
-    const { cantidad_total } = useContexto()
-    console.log(cantidad_total)
+    const { cantidad_total, carrito } = useContexto()
 
 
     return ( 
@@ -23,21 +26,16 @@ const Navbar = ({nombre,links}) => {
                 return <NavLink className="links" key={elemento.id} to={elemento.href}>{elemento.name}</NavLink>
             })}
         </nav>
-        <NavLink to="/carrito">
-            <span id="carrito" class="material-icons">
-                shopping_cart
-            </span>
-            {cantidad_total}
-        </NavLink>
+        <CartWidget />
     </header>
         
+        )
+    }
                 
                 
 
-    
-    
 
-    )
-}
+    
+    
 
 export default Navbar

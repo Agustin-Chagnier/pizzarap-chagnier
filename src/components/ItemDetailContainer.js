@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     const promesa = new Promise((res, rej) => {
       setTimeout(() => {
         res(productos.find((prod) => prod.id === Number(id)));
-      }, 3000);
+      }, 2000);
     });
 
     promesa.then((prod) => {
