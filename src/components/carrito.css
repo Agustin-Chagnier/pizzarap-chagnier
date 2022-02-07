@@ -1,0 +1,26 @@
+#carrito__lista {
+    background-color: rgb(255, 197, 143);
+    padding: 1em;
+    font-family: 'Oswald', sans-serif;  
+    font-size: 1.5em;
+    padding-bottom: 20em;
+}
+
+#carrito__lista--items {
+    margin: 0;
+}
+
+    
+
+
+#carrito__item {
+margin: 1em;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+}
+
+
+#carrito__vacio {
+    padding-bottom: 2em;
+}

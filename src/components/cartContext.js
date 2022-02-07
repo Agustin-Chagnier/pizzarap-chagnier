@@ -1,4 +1,5 @@
 import { useState, createContext , useContext } from "react";
+import Swal from "sweetalert2";
 
 const contexto = createContext()
 
@@ -21,11 +22,13 @@ const CustomProvider = ({children}) => {
     const agregarAlCarrito = (producto,cantidad) => {
         
         const productoDuplicado = isInCarrito(producto.id)
+        
         if(productoDuplicado != undefined){           
             productoDuplicado.cantidad++
             
         }else{            
             
+           
             const productoConCantidad = {...producto, cantidad} 
             setCarrito([...carrito,productoConCantidad]);
             setCantidadTotal(cantidad)
@@ -42,9 +45,30 @@ const CustomProvider = ({children}) => {
         setPrecioTotal(precio_total - (precio * cantidad))
     }
 
-    const limpiarCarrito = () => {setCarrito([])}
+    const borrarUnoDelCarrito = (id, cantidad, precio) => {
+        let productoDeMasUnidades = isInCarrito(id)
+            
+        if(cantidad > 1){           
+            productoDeMasUnidades.cantidad--   
+            setCantidadTotal(cantidad_total - 1)
+            setPrecioTotal(precio_total - precio )
+        }else{            
+            Swal.fire({
+                text: `La cantidad minima es 1u (uno)`,
+              });
+            
+               
+        }                
+    }
+            
+        
+
+    const limpiarCarrito = () => {
+        setCarrito([]) 
+        setCantidadTotal(0)}
 
     const isInCarrito = (id) => {
+        
        return carrito.find(producto => producto.id === id)
     }
 
@@ -55,7 +79,8 @@ const CustomProvider = ({children}) => {
         agregarAlCarrito,
         borrarDelCarrito,
         limpiarCarrito,
-        precio_total
+        precio_total,
+        borrarUnoDelCarrito
 
     }
 

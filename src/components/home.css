@@ -1,0 +1,27 @@
+#home {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    background-color: rgb(255, 215, 133);
+    flex-direction: row;
+    height: 75vh;
+}
+
+
+#titulos__home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;  
+}
+
+#fondo__home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif; 
+}
+
+#home__landing {
+width: auto;
+}

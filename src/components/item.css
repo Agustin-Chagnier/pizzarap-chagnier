@@ -1,8 +1,43 @@
 #item__box {
-    width: fit-content;
+
+    width: 13em;
     display: flex;
+    margin: 1em;
     flex-direction: column;
     justify-content: space-around;
-    border: solid black 2px;
+    border: solid black 5px;
+    border-radius: 1em;
+    
 
+}
+
+#item__titulo {
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    background-color: rgb(255, 231, 163);
+    margin: 0;
+}
+
+#item__precio {
+    background-color: rgb(255, 231, 163);
+    margin: 0;  
+}
+
+
+#item__img {
+    width: auto;
+}
+
+#item__boton {
+    background-color: rgb(255, 231, 163);
+    display: flex;
+    flex-direction: row;
+    padding-left: 0.2em;
+}
+
+#item__boton--boton {
+    border-radius: 2em;
+    background-color: rgb(253, 251, 247);
+    text-decoration: none;
 }

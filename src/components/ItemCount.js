@@ -34,11 +34,8 @@ function ItemCount({stock, initial, onAdd, setCantidad, setMostrar}) {
         setCantidad(contador)
         e.target.disabled = true
         setMostrar(true)
-
-        setTimeout(() => {
-            
-          }, 3000);
     }
+
 
 
     

@@ -1,0 +1,13 @@
+#pagoContainer {
+    padding: 1em;
+    background-color: rgb(255, 197, 143);
+}
+
+#pagoFormulario {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 40vh;
+    justify-content: space-around;
+    margin-bottom: 14em;
+}

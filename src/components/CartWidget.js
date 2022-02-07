@@ -1,6 +1,7 @@
 import React from "react";
 import { useContexto } from "./cartContext.js"
-import {Link,NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom"
+import "./cartWidget.css";
 
 
 
@@ -12,7 +13,7 @@ const {cantidad_total} = useContexto()
 
 if (cantidad_total !== 0){
     return (
-        <NavLink to="/carrito">
+        <NavLink to="/carrito" id="carrito_dial">
             <span id="carrito" class="material-icons">
                 shopping_cart
             </span>

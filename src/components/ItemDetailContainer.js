@@ -4,6 +4,7 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { collection, doc, getDoc } from "firebase/firestore"
 import { db } from "./firebase"
+import "./itemDetailContainer.css";
 
 
 const ItemDetailContainer = () => {
@@ -27,7 +28,7 @@ const ItemDetailContainer = () => {
 
 
 return (
-    <div>
+    <div id="detail__container">
         <ItemDetail producto={seleccion} />
     </div>
 )

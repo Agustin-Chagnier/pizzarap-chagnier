@@ -1,5 +1,13 @@
+#edetail__container {
+    background-color: rgb(255, 197, 143);
+}
+
+
 #greeting {
     font-size: 2em;
-    color: rgb(105, 57, 38);
+    color: rgb(58, 148, 190);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: gray;
+    margin: 0;
 }
+

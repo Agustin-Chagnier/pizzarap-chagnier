@@ -1,0 +1,7 @@
+#detalle {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    font-family: 'Oswald', sans-serif; 
+    font-size: 1.2em;
+}

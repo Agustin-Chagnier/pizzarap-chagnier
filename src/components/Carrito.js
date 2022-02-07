@@ -1,49 +1,30 @@
 import {Link,NavLink} from "react-router-dom"
 import { useContexto } from "./cartContext.js"
-import { addDoc, collection , serverTimestamp , updateDoc } from "firebase/firestore"
-import { db } from "./firebase"
-/* import Formulario from "./Formulario" */
+import "./carrito.css";
+
 
 
 
 
 const Carrito = () => {
 
-    const {carrito,borrarDelCarrito,limpiarCarrito,precio_total} = useContexto()
-
-    const finalizarCompra = () => {
-
-        const ventasCollection = collection(db, "ventas")
-        addDoc(ventasCollection,{
-            cliente : {
-                nombre : "Agustin",
-                apellido : "Chagnier",
-                email : "agustin@mail.com"
-            },
-            items : carrito,
-            fecha : serverTimestamp(),
-            total: precio_total
-        })
-        .then((resultado)=>{
-            console.log(resultado)
-        })
-        limpiarCarrito()
-    }
-
-
+    const {carrito,borrarDelCarrito,limpiarCarrito,precio_total, borrarUnoDelCarrito} = useContexto()
+    
     return (
-        <div>
+        <div  id="carrito__lista">
             Soy Carrito
             {carrito.length > 0 ? (
-                <ul>
+                <ul id="carrito__lista--items">
                     {carrito.map((producto, indice) => {
-                        return <li key={indice}>{producto.producto} - ${producto.precio} - {producto.cantidad} <button onClick={()=>borrarDelCarrito(producto.id,producto.cantidad,producto.precio)}>borrar</button></li>
+                        return <li key={indice} id="carrito__item">{producto.producto} - ${producto.precio} - {producto.cantidad}u <button onClick={()=>borrarDelCarrito(producto.id,producto.cantidad,producto.precio)}>borrar</button><button onClick={()=>borrarUnoDelCarrito(producto.id,producto.cantidad,producto.precio)}>Borrar solo 1</button></li>
                     })}
-                    {precio_total}
+                    total ${precio_total}
                     <button onClick={limpiarCarrito}>LIMPIAR</button>
-                    <button onClick={finalizarCompra}>TERMINAR COMPRA</button>
+                    <NavLink to={"/Pago"}>
+                    <button id="carritoTerminar">TERMINAR COMPRA</button>
+                    </NavLink>
                 </ul>
-            ) : <p>No hay productos en el carrito<br/><Link to="/menu">Volver al menu</Link></p>}
+            ) : <p id="carrito__vacio">No hay productos en el carrito<br/><Link to="/">Volver al inicio</Link></p>}
         </div>
             
     )

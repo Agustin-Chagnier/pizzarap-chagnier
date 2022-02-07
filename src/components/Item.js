@@ -10,11 +10,10 @@ const Item = (props) => {
     return (
         <>
         <div id="item__box">
-        <h4>{props.id}</h4>
-        <h3>{props.producto}</h3>
-        <img src={props.img} alt="foto" />
-        <h3>${props.precio}</h3>
-        <Link to={`/producto/${props.id}`}><button>VER DETALLE</button></Link>
+        <h3 id="item__titulo">{props.producto}</h3>
+        <img id="item__img" src={props.img} alt="foto" />
+        <h3 id="item__precio">${props.precio}</h3>
+        <Link to={`/producto/${props.id}`} id="item__boton"><button id="item__boton--boton">VER DETALLE</button></Link>
         
         
         </div>

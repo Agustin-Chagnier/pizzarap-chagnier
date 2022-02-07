@@ -1,0 +1,10 @@
+#item__list {
+    display: flex;
+    align-self: center;
+    width: auto;
+    flex-direction: row;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    background-color: rgb(255, 197, 143);
+    
+}

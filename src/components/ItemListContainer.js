@@ -15,7 +15,7 @@ import { getDocs, query, collection, where } from "firebase/firestore"
 
 
 
-const ItemListContainer = ({ nombre }) => {
+const ItemListContainer = ({}) => {
 
   let [lista, setLista] = useState([])
   const { categoria } = useParams()
@@ -67,7 +67,7 @@ const ItemListContainer = ({ nombre }) => {
         
             
         <>  
-        <p id="greeting">Hola {nombre}! </p>
+        <p id="greeting"></p>
         <ItemList productos={lista}/>
         
         </>

@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Footer from './components/Footer'
 import Home from "./components/Home" 
 import Carrito from "./components/Carrito"
+import Pago from "./components/Pago"
 import productos from "./components/jsons/productos.json"
 import CustomProvider from "./components/cartContext.js"
 
@@ -40,10 +41,11 @@ function App() {
             <Routes>
         
                 <Route  path="/" element={<Home/>}/>
-                <Route  path="/:categoria" element={<ItemListContainer productos={productos} nombre={"USUARIO"} />}/>
+                <Route  path="/:categoria" element={<ItemListContainer productos={productos}/>}/>
                 <Route  path="/carrito" element={<Carrito/>}/>
                 <Route  path="/producto/:id" element={<ItemDetailContainer productos={productos}/>}/>
-                <Route path="*"/>
+                <Route path="/Pago" element={<Pago />} />
+
             
             </Routes>
         
