@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+#Proyecto final REACT - PizzaRap E - Commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Introduccion
 
-## Available Scripts
+PizzaRap es un e-commerce desarrollado con React. Se utilizaria para vender comida online, para clientes que la pueden pedir a domicilio y al mismo tiempo dejar los datos de cliente a disposicion de la empresa. Con su propia base de datos de productos, posiblidad de usar un carrito, saber la suma total de la cantidad y el precio de productos, y la solucitud del pedido enviada a la misma base de datos a traves de un formulario.
 
-In the project directory, you can run:
+##Tecnologias usadas 
 
-### `npm start`
+Firebase (^9.6.3): Software de desarrollo que ofrece varios servicios pero principalmente utilizado con firestore para proveer al e-commerce de una base de datos para los productos y pedidos.
+SweetAlert2 (^11.3.10): Libreria sencilla para aportar ventanas emergentes de alerta y/o confirmacion
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##Componentes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Apenas se carga el proyecto, se hace visible con los componentes de estructura y division (App establece los links y las rutas. NavBar lo hace visible en categorias). Luego, la accion mas interactiva de la compra sucede de a 3 componentes. Los productos visibles en las categorias y la eleccion de los productos (ItemListContainer, ItemList, Item. Respectivamente) luego tienen su segundo movimiento: elegir cantidad de unidades e ingreso al carrito(ItemDetailContainer, ItemDetail, ItemCount). Luego la compra del usuario se va haciendo visible en el carrito (Carrito) y marcado por su icono en el navbar (cartWidget). Cuando el usuario finaliza el flujo termina en el componente de pagos (Pago) donde el usuario agrega sus datos asi puede recibir su pedido a domicilio y abonar. 
+Todo esto intervenido por el contexto (cartContext) que permite establecer la informacion de la compra en estados y mantener la informacion en constante cambio.
 
-### `npm test`
+##Sobre mi
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este proyecto esta desarrollado por mi, Agustin Chagnier, dentro del marco del curso de React que otorga Coderhouse (2021).
+a.chagnier@gmail.com
 
-### `npm run build`
+##Como se visualiza este proyecto?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+En consola:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+###1.Clonar repositorio (https://github.com/Agustin-Chagnier/pizzarap-chagnier.git)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###2.Ingresar a la direccion del proyecto
 
-### `npm run eject`
+###3.Instalar NodeJs
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###4.Inicializar el proyecto (npm start)
